@@ -1,0 +1,234 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and global styles */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    /* Monospace font */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 0 1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light mode styles */
+body.light-mode {
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+header.light-mode {
+    background-color: #4CAF50;
+    color: white;
+}
+
+footer.light-mode {
+    background-color: #f1f1f1;
+    color: #333;
+    --heading-color: #4CAF50;
+}
+
+.thought.light-mode {
+    background-color: white;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+    --heading-color: #333;
+}
+
+header.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+footer.dark-mode {
+    background-color: #333;
+    color: #ffffff;
+}
+
+.thought.dark-mode {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    color: #ffffff;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    color: var(--heading-color);
+}
+
+/* Button styles */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button.light-mode {
+    background-color: #4CAF50;
+}
+
+button.dark-mode {
+    background-color: #666;
+}
+
+/* Main content styles */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 7rem 2rem 4rem;
+    /* Adjust padding to avoid overlap with header and footer */
+}
+
+/* Thought container styles */
+#thought-container {
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Individual thought styles */
+.thought {
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-size: 20px;
+    /* Set font size for content */
+}
+
+.thought:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/* Typography enhancements */
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    /* Monospace font */
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 20px;
+    /* Set font size for paragraphs */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+
+    main {
+        padding: 7rem 1rem 4rem;
+        /* Adjust padding to avoid overlap with header and footer */
+    }
+
+    .thought {
+        padding: 1rem;
+        font-size: 14px;
+        /* Adjust font size for smaller screens */
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 16px;
+        /* Adjust font size for smaller screens */
+    }
+
+    button {
+        top: 0.75rem;
+        right: 0.75rem;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0.75rem;
+    }
+
+    main {
+        padding: 7rem 0.75rem 4rem;
+        /* Adjust padding to avoid overlap with header and footer */
+    }
+
+    .thought {
+        padding: 0.75rem;
+        font-size: 17px;
+        /* Adjust font size for smaller screens */
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    p {
+        font-size: 26px;
+        /* Adjust font size for smaller screens */
+    }
+
+    button {
+        top: 0.5rem;
+        right: 0.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
